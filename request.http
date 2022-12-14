@@ -1,0 +1,5 @@
+### List notifications
+GET http://localhost:3000/notifications
+
+### Create a new notification
+POST http://localhost:3000/notifications
