@@ -1,5 +1,12 @@
 # Notifications Service - Microservice
 
+## NestJS
+
+### Validation
+```bash
+$ npm i class-validator class-transformer
+```
+
 ## Prisma
 ```bash
 $ npm i prisma -D
