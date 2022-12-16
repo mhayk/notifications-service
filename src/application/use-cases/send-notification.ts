@@ -1,6 +1,6 @@
 import { Content } from '../entities/content';
 import { Notification } from '../entities/notification';
-import { NotificationsRepository } from '../repositores/notification-repository';
+import { NotificationsRepository } from '../repositories/notification-repository';
 
 interface SendNotificationRequest {
   recipientId: string;
