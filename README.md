@@ -2,6 +2,11 @@
 
 ## NestJS
 
+### Check errors without convert to js
+```
+$ npx tsc --noEmit
+```
+
 ### Validation
 ```bash
 $ npm i class-validator class-transformer
