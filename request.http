@@ -7,6 +7,7 @@
 GET http://{{host}}/notifications
 
 ### Create a new notification
+# @name createNotification
 POST http://{{host}}/notifications
 Content-Type: {{contentType}}
 
@@ -16,17 +17,22 @@ Content-Type: {{contentType}}
     "category": "fewfewfew"
 }
 
+###
+
+@notificationId = {{createNotification.response.body.notification.$.id}}
+@recipientId = {{createNotification.response.body.notification.$.recipientId}}
+
 ### Cancel a notification by id
-PATCH http://{{host}}/notifications/6740fddd-9d4b-4af9-9156-676dfd3345a6/cancel
+PATCH http://{{host}}/notifications/{{notificationId}}/cancel
 
 ### Read a notification by id
-PATCH http://{{host}}/notifications/6740fddd-9d4b-4af9-9156-676dfd3345a6/read
+PATCH http://{{host}}/notifications/{{notificationId}}/read
 
 ### Unread a notification by id
-PATCH http://{{host}}/notifications/6740fddd-9d4b-4af9-9156-676dfd3345a6/unread
+PATCH http://{{host}}/notifications/{{notificationId}}/unread
 
 ### Count notifications from recipient id
-GET http://{{host}}/notifications/count/from/6de5e00a-9cf5-4f7c-982e-0e879fcdf306
+GET http://{{host}}/notifications/count/from/{{recipientId}}
 
 ### Get notifcations from recipient id
-GET http://{{host}}/notifications/from/6de5e00a-9cf5-4f7c-982e-0e879fcdf306
+GET http://{{host}}/notifications/from/{{recipientId}}
