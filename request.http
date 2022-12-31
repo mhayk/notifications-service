@@ -1,9 +1,14 @@
+@hostname = localhost
+@port = 3000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+
 ### List notifications
-GET http://localhost:3000/notifications
+GET http://{{host}}/notifications
 
 ### Create a new notification
-POST http://localhost:3000/notifications
-Content-Type: application/json
+POST http://{{host}}/notifications
+Content-Type: {{contentType}}
 
 {
     "recipientId": "{{$guid}}",
@@ -12,16 +17,16 @@ Content-Type: application/json
 }
 
 ### Cancel a notification by id
-PATCH http://localhost:3000/notifications/6740fddd-9d4b-4af9-9156-676dfd3345a6/cancel
+PATCH http://{{host}}/notifications/6740fddd-9d4b-4af9-9156-676dfd3345a6/cancel
 
 ### Read a notification by id
-PATCH http://localhost:3000/notifications/6740fddd-9d4b-4af9-9156-676dfd3345a6/read
+PATCH http://{{host}}/notifications/6740fddd-9d4b-4af9-9156-676dfd3345a6/read
 
 ### Unread a notification by id
-PATCH http://localhost:3000/notifications/6740fddd-9d4b-4af9-9156-676dfd3345a6/unread
+PATCH http://{{host}}/notifications/6740fddd-9d4b-4af9-9156-676dfd3345a6/unread
 
 ### Count notifications from recipient id
-GET http://localhost:3000/notifications/count/from/6de5e00a-9cf5-4f7c-982e-0e879fcdf306
+GET http://{{host}}/notifications/count/from/6de5e00a-9cf5-4f7c-982e-0e879fcdf306
 
 ### Get notifcations from recipient id
-GET http://localhost:3000/notifications/from/6de5e00a-9cf5-4f7c-982e-0e879fcdf306
+GET http://{{host}}/notifications/from/6de5e00a-9cf5-4f7c-982e-0e879fcdf306
