@@ -13,3 +13,6 @@ Content-Type: application/json
 
 ### Cancel a notification by id
 PATCH http://localhost:3000/notifications/6740fddd-9d4b-4af9-9156-676dfd3345a6/cancel
+
+### Read a notification by id
+PATCH http://localhost:3000/notifications/6740fddd-9d4b-4af9-9156-676dfd3345a6/read
